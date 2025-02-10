@@ -6,23 +6,23 @@
              NavigationPage.HasNavigationBar="False"
              BackgroundColor="{StaticResource Brown}">
     <VerticalStackLayout VerticalOptions="CenterAndExpand">
-        <Label Text="Suite Super Luxo"
+        <Label Text="{Binding QuartoSelecionado.Descricao}"
                TextColor="White"
                FontSize="50"
                FontFamily="Montserrat"
                HorizontalTextAlignment="Center"/>
         <Frame Margin="10">
-            <HorizontalStackLayout>
-                <HorizontalStackLayout>
+            <StackLayout Orientation="Horizontal">
+                <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
                     <Label Text="Adultos: "/>
-                    <Label Text="2" TextColor="Black"/>
+                    <Label Text="{Binding QuantAdultos} " TextColor="Black"/>
                 </HorizontalStackLayout>
                     
-                <HorizontalStackLayout>
-                    <Label Text="Criancas: "/>
-                    <Label Text="2: " TextColor="Black"/>
+                <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                    <Label Text=" Criancas: "/>
+                    <Label Text="{Binding QuantCriancas} " TextColor="Black"/>
                 </HorizontalStackLayout>
-            </HorizontalStackLayout>
+            </StackLayout>
         </Frame>
 
         <Frame Margin="10">
@@ -33,16 +33,17 @@
                 <Label Grid.Row="0" Grid.Column="2" Text="Estadia: "/>
 
 
-                <Label Grid.Row="1" Grid.Column="0" Text="07/02/2025 "/>
-                <Label Grid.Row="1" Grid.Column="1" Text="28/02/2025 "/>
-                <Label Grid.Row="1" Grid.Column="2" Text="28 dias "/>
+                <Label Grid.Row="1" Grid.Column="0" Text="{Binding DataCheckIn, StringFormat='{0:dd/MM/yyyy}'} "/>
+                <Label Grid.Row="1" Grid.Column="1" Text="{Binding DataCheckOut, StringFormat='{0:dd/MM/yyyy}'} "/>
+                <Label Grid.Row="1" Grid.Column="2" Text="{Binding Estadia}"/>
             </Grid>
         </Frame>
 
         <Frame Margin="10">
-            <HorizontalStackLayout>
-                <Label Text="Valor Total:"/>
-                <Label Text="R$ 750,00"/>
+            <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                <Label Text="Valor Total: "/>
+                <Label Text="{Binding ValorTotal, StringFormat='R$ {0:N2}'}"
+                       TextColor="{StaticResource Brown}"/>
             </HorizontalStackLayout>
         </Frame>
 
